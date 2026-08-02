@@ -4,7 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>TOMA ID — Niche Genre Generator</title>
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23b4ff00'/%3E%3Ctext x='16' y='23' font-family='monospace' font-weight='700' font-size='20' text-anchor='middle' fill='%231a1a1a'%3ET%3C/text%3E%3C/svg%3E">
+  <!-- Lime-green favicon matching toma-id.github.io -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='4' fill='%23b4ff00'/%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
@@ -18,9 +19,9 @@
     :root {
       --lime:   #b4ff00;
       --bg:     #f0efea;
-      --ink:    #1a1a1a;
-      --muted:  rgba(26,26,26,0.45);
-      --border: 1px solid #1a1a1a;
+      --ink:    #000000;
+      --muted:  rgba(0,0,0,0.45);
+      --border: 1px solid #000000;
     }
 
     html { scroll-behavior: smooth; }
@@ -43,14 +44,17 @@
 
     .logo {
       font-size: 13px;
-      font-weight: 700;
+      font-weight: 800;
+      font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--lime);
+      color: var(--ink);
     }
 
     .site-tagline {
       font-size: 12px;
+      font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
+      font-weight: 400;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: var(--ink);
@@ -64,6 +68,7 @@
     .genre-display {
       font-size: clamp(2.6rem, 6.5vw, 5rem);
       font-weight: 700;
+      font-family: 'Menlo', 'Monaco', 'Courier New', monospace;
       letter-spacing: 0.04em;
       text-transform: uppercase;
       color: var(--ink);
@@ -218,7 +223,7 @@
   <!-- HEADER -->
   <header>
     <div class="logo">TOMA ID</div>
-    <div class="site-tagline">SCREENWRITER</div>
+    <div class="site-tagline">Film Writer</div>
   </header>
 
   <!-- HERO: cycling genres -->
@@ -305,7 +310,7 @@
   <div class="result" id="result">
     <div class="result-label">YOUR SCREENPLAY GENRE</div>
     <div class="result-genre" id="resultGenre"></div>
-    <a class="order-btn" id="orderBtn" href="mailto:hello@toma-id.com?subject=Screenplay%20Order" target="_blank">
+    <a class="order-btn" id="orderBtn" href="mailto:nomessagereceived@gmail.com?subject=Screenplay%20Order" target="_blank">
       ORDER SCREENPLAY →
     </a>
   </div>
@@ -492,7 +497,7 @@
       const { territory, form, world } = state;
       if (territory && form && world) {
         const genre = buildResultSentence(territory, form, world);
-        this.href = `mailto:hello@toma-id.com?subject=Screenplay%20Order%3A%20${encodeURIComponent(genre)}&body=Hello%2C%0A%0AI%20would%20like%20to%20order%20a%20screenplay%20for%20the%20genre%3A%0A${encodeURIComponent(genre)}%0A%0A`;
+        this.href = `mailto:nomessagereceived@gmail.com?subject=Screenplay%20Order%3A%20${encodeURIComponent(genre)}&body=Hello%2C%0A%0AI%20would%20like%20to%20order%20a%20screenplay%20for%20the%20genre%3A%0A${encodeURIComponent(genre)}%0A%0A`;
       }
     });
   </script>
